@@ -229,7 +229,7 @@ const Terminal = (() => {
     if (history[0] !== cmd) history.unshift(cmd);
     histIdx = -1;
     scrollBottom();
-    input && input.focus();
+    input && input.focus({ preventScroll: true });
   }
 
   /* ── Chip → animated typing ─────────────────────── */
@@ -241,7 +241,7 @@ const Terminal = (() => {
     if (typingLock) return;
     typingLock = true;
     if (chipEl) chipEl.classList.add("pressed");
-    input.focus();
+    input.focus({ preventScroll: true });
     input.value = "";
     const promptRow = body.querySelector(".t-prompt");
     promptRow.classList.add("busy");

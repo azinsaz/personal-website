@@ -14,48 +14,63 @@
   const instances = [];
 
   function setup() {
-  stages.forEach(stage => {
-    const id = stage.dataset.demo;
-    const demo = window.PhysicsDemos.create(id);
-    if (!demo) return;
+    stages.forEach((stage) => {
+      const id = stage.dataset.demo;
+      const demo = window.PhysicsDemos.create(id);
+      if (!demo) return;
 
-    const canvas = stage.querySelector("canvas");
-    const article = stage.closest(".ex");
-    const ctrlHost = article && article.querySelector(".ex-controls");
-    const readout = stage.querySelector(".ex-readout");
-    const nameEl = readout && readout.querySelector(".r-name");
-    const metaEl = readout && readout.querySelector(".r-meta");
+      const canvas = stage.querySelector("canvas");
+      const article = stage.closest(".ex");
+      const ctrlHost = article
+        ? article.querySelector(".ex-controls")
+        : stage.parentElement &&
+          stage.parentElement.querySelector(".ex-controls");
+      const readout = stage.querySelector(".ex-readout");
+      const nameEl = readout && readout.querySelector(".r-name");
+      const metaEl = readout && readout.querySelector(".r-meta");
 
-    if (nameEl) nameEl.textContent = demo.name;
-    if (metaEl) metaEl.textContent = demo.meta();
+      if (nameEl) nameEl.textContent = demo.name;
+      if (metaEl) metaEl.textContent = demo.meta();
 
-    const r = window.PhysicsCanvas.setup(canvas);
-    let ctx = r.ctx, W = r.W, H = r.H;
-    let state = {};
-    demo.init(ctx, W, H, state);
+      const r = window.PhysicsCanvas.setup(canvas);
+      let ctx = r.ctx,
+        W = r.W,
+        H = r.H;
+      let state = {};
+      demo.init(ctx, W, H, state);
 
-    if (ctrlHost) {
-      window.PhysicsCanvas.buildSliders(ctrlHost, demo, (key) => {
-        if ((id === "golden" && key === "count") ||
-            (id === "lissajous" && (key === "aFreq" || key === "bFreq"))) {
+      if (ctrlHost) {
+        window.PhysicsCanvas.buildSliders(ctrlHost, demo, (key) => {
+          if (
+            (id === "golden" && key === "count") ||
+            (id === "lissajous" && (key === "aFreq" || key === "bFreq"))
+          ) {
+            state = {};
+            demo.init(ctx, W, H, state);
+          }
+          if (metaEl) metaEl.textContent = demo.meta();
+        });
+      }
+
+      instances.push({
+        demo,
+        canvas,
+        getCtx: () => ctx,
+        getDims: () => ({ W, H }),
+        state,
+        metaEl,
+        resize() {
+          const r = window.PhysicsCanvas.setup(canvas);
+          ctx = r.ctx;
+          W = r.W;
+          H = r.H;
           state = {};
           demo.init(ctx, W, H, state);
-        }
-        if (metaEl) metaEl.textContent = demo.meta();
+          this.state = state;
+        },
       });
-    }
-
-    instances.push({ demo, canvas, getCtx: () => ctx, getDims: () => ({ W, H }), state, metaEl,
-      resize() {
-        const r = window.PhysicsCanvas.setup(canvas);
-        ctx = r.ctx; W = r.W; H = r.H;
-        state = {};
-        demo.init(ctx, W, H, state);
-        this.state = state;
-      },
     });
-  });
-  requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
   }
 
   function loop() {
@@ -74,13 +89,13 @@
   window.addEventListener("resize", () => {
     cancelAnimationFrame(resizeRaf);
     resizeRaf = requestAnimationFrame(() => {
-      instances.forEach(i => i.resize());
+      instances.forEach((i) => i.resize());
     });
   });
 
   // Smooth scroll for in-page anchors (TOC links)
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener("click", e => {
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
       const id = a.getAttribute("href").slice(1);
       const target = document.getElementById(id);
       if (!target) return;

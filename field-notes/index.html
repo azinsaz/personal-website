@@ -6,6 +6,7 @@
   <title>Field Notes — Ali Zinsaz</title>
   <meta name="description" content="Essays on philosophy, AI, physics, cosmology, and the things I think about when I'm not building things." />
   <meta name="color-scheme" content="dark" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Field Notes — Ali Zinsaz" />
@@ -32,10 +33,17 @@
         <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
         <span class="pb-sep">~</span><span class="pb-sep">/</span><span class="pb-path">field-notes</span>
       </div>
-      <div class="pg-worlds" role="list">
-        <a href="../index.html" role="listitem">~/home</a>
-        <a href="index.html" class="active" role="listitem">~/field-notes</a>
-        <a href="../simulations/index.html" role="listitem">~/simulations</a>
+      <div class="pg-nav-right">
+        <div class="pg-worlds" role="list">
+          <a href="../index.html" role="listitem">~/home</a>
+          <a href="index.html" class="active" role="listitem">~/field-notes</a>
+          <a href="../simulations/index.html" role="listitem">~/simulations</a>
+        </div>
+        <button class="topbar-search" id="top-search" aria-label="open search (⌘K)">
+          <span class="ts-glyph" aria-hidden="true">⌕</span>
+          <span class="ts-label">search everything…</span>
+          <span class="ts-key"><kbd aria-hidden="true">⌘</kbd><kbd aria-hidden="true">K</kbd></span>
+        </button>
       </div>
     </nav>
 
@@ -61,6 +69,24 @@
       </nav>
     </footer>
 
+  <!-- ⌘K palette -->
+  <div class="palette-overlay" id="palette" role="dialog" aria-label="command palette" aria-modal="true">
+    <div class="palette">
+      <div class="palette-bar">
+        <span class="palette-dot" aria-hidden="true"></span>
+        <span class="palette-title">search · @azinsaz</span>
+        <span class="palette-esc">esc to close</span>
+      </div>
+      <div class="palette-input-wrap">
+        <input class="palette-input" id="palette-input" type="text" placeholder='try "free will", "kepler", or hit ↓' autocomplete="off" spellcheck="false" aria-label="search" />
+      </div>
+      <div class="palette-list" id="palette-list" role="listbox"></div>
+      <div class="palette-foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd class="ok">↵</kbd> open</span>
+        <span id="palette-count">0</span>
+      </div>
+    </div>
+  </div>
   </main>
 
   <script src="../js/data.js"></script>
@@ -79,6 +105,18 @@
         </a>
       `).join('');
     })();
+  </script>
+  <script src="../js/palette.js"></script>
+  <script>
+    document.getElementById("top-search").addEventListener("click", Palette.open);
+    document.addEventListener("keydown", function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); Palette.toggle();
+      }
+      if (e.key === "Escape" && document.getElementById("palette") && !document.getElementById("palette").hidden) {
+        Palette.close();
+      }
+    });
   </script>
 </body>
 </html>

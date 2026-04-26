@@ -6,6 +6,7 @@
   <title>Simulations — Ali Zinsaz</title>
   <meta name="description" content="Interactive physics and math simulations: the Higgs collision, the Lorenz attractor, the golden spiral, Gabriel's horn, the Lissajous figure. Live, interactive, annotated." />
   <meta name="color-scheme" content="dark" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Simulations — Ali Zinsaz" />
@@ -32,10 +33,17 @@
         <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
         <span class="pb-sep">~</span><span class="pb-sep">/</span><span class="pb-path">simulations</span>
       </div>
-      <div class="pg-worlds" role="list">
-        <a href="../index.html" role="listitem">~/home</a>
-        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
-        <a href="index.html" class="active" role="listitem">~/simulations</a>
+      <div class="pg-nav-right">
+        <div class="pg-worlds" role="list">
+          <a href="../index.html" role="listitem">~/home</a>
+          <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+          <a href="index.html" class="active" role="listitem">~/simulations</a>
+        </div>
+        <button class="topbar-search" id="top-search" aria-label="open search (⌘K)">
+          <span class="ts-glyph" aria-hidden="true">⌕</span>
+          <span class="ts-label">search everything…</span>
+          <span class="ts-key"><kbd aria-hidden="true">⌘</kbd><kbd aria-hidden="true">K</kbd></span>
+        </button>
       </div>
     </nav>
 
@@ -50,31 +58,36 @@
     </header>
 
     <section class="pg-simgrid" aria-label="simulations">
-      <a class="pg-simcard" href="higgs.html">
+      <a class="pg-simcard" href="higgs.html" data-demo="higgs">
+        <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">pp → H → γγ</span>
         <h2 class="pg-simcard-h">Higgs collision</h2>
-        <p class="pg-simcard-blurb">CMS event display at √s = 13 TeV. Charged particles spiraling in a 3.8 T solenoid. The $125\,\text{GeV}$ excess that took 50 years and 10,000 people to find.</p>
+        <p class="pg-simcard-blurb">CMS event display at √s = 13 TeV. Charged particles spiraling in a 3.8 T solenoid. The 125 GeV excess that took 50 years and 10,000 people to find.</p>
       </a>
 
-      <a class="pg-simcard" href="lorenz.html">
+      <a class="pg-simcard" href="lorenz.html" data-demo="lorenz">
+        <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">dx/dt = σ(y−x)</span>
         <h2 class="pg-simcard-h">Lorenz attractor</h2>
         <p class="pg-simcard-blurb">Three ordinary differential equations. Nothing hidden, nothing random, nothing quantum. And, in practice, completely unforecastable. The first chaos.</p>
       </a>
 
-      <a class="pg-simcard" href="golden.html">
+      <a class="pg-simcard" href="golden.html" data-demo="golden">
+        <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">φ = (1+√5)/2</span>
         <h2 class="pg-simcard-h">Golden spiral</h2>
         <p class="pg-simcard-blurb">A logarithmic spiral with a famous growth factor. The math is real; the "nature loves φ" claim is mostly post-hoc pattern matching. But plants and shadows, yes.</p>
       </a>
 
-      <a class="pg-simcard" href="gabriel.html">
+      <a class="pg-simcard" href="gabriel.html" data-demo="gabriel">
+        <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">V = π · A → ∞</span>
         <h2 class="pg-simcard-h">Gabriel's horn</h2>
         <p class="pg-simcard-blurb">Finite volume. Infinite surface area. You can fill it with paint but you cannot paint the inside of it. The first time most students realize "infinite" comes in different sizes.</p>
       </a>
 
-      <a class="pg-simcard" href="lissajous.html">
+      <a class="pg-simcard" href="lissajous.html" data-demo="lissajous">
+        <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">x = sin(at+δ), y = sin(bt)</span>
         <h2 class="pg-simcard-h">Lissajous figure</h2>
         <p class="pg-simcard-blurb">Two perpendicular sine waves. Closed when the frequency ratio is rational. Phase drift turns the math into a movie. Pre-digital oscilloscopes used these to tune signals by eye.</p>
@@ -111,9 +124,65 @@
       </nav>
     </footer>
 
+  <!-- ⌘K palette -->
+  <div class="palette-overlay" id="palette" role="dialog" aria-label="command palette" aria-modal="true">
+    <div class="palette">
+      <div class="palette-bar">
+        <span class="palette-dot" aria-hidden="true"></span>
+        <span class="palette-title">search · @azinsaz</span>
+        <span class="palette-esc">esc to close</span>
+      </div>
+      <div class="palette-input-wrap">
+        <input class="palette-input" id="palette-input" type="text" placeholder='try "free will", "kepler", or hit ↓' autocomplete="off" spellcheck="false" aria-label="search" />
+      </div>
+      <div class="palette-list" id="palette-list" role="listbox"></div>
+      <div class="palette-foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd class="ok">↵</kbd> open</span>
+        <span id="palette-count">0</span>
+      </div>
+    </div>
+  </div>
   </main>
 
-  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <script src="../js/physics.js"></script>
+  <script>
+    (function () {
+      if (!window.PhysicsDemos || !window.PhysicsCanvas) return;
+      const cards = document.querySelectorAll('.pg-simcard[data-demo]');
+      const instances = [];
+      function setup() {
+        cards.forEach(card => {
+          const id = card.dataset.demo;
+          const canvas = card.querySelector('.pg-simcard-canvas');
+          if (!canvas) return;
+          const demo = window.PhysicsDemos.create(id);
+          if (!demo) return;
+          const r = window.PhysicsCanvas.setup(canvas);
+          const state = {};
+          demo.init(r.ctx, r.W, r.H, state);
+          instances.push({ demo, canvas, ctx: r.ctx, W: r.W, H: r.H, state });
+        });
+        requestAnimationFrame(loop);
+      }
+      function loop() {
+        requestAnimationFrame(loop);
+        for (const inst of instances) inst.demo.tick(inst.ctx, inst.W, inst.H, inst.state);
+      }
+      requestAnimationFrame(setup);
+    })();
+  </script>
+  <script src="../js/data.js"></script>
+  <script src="../js/palette.js"></script>
+  <script>
+    document.getElementById("top-search").addEventListener("click", Palette.open);
+    document.addEventListener("keydown", function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); Palette.toggle();
+      }
+      if (e.key === "Escape" && document.getElementById("palette") && !document.getElementById("palette").hidden) {
+        Palette.close();
+      }
+    });
+  </script>
 </body>
 </html>
