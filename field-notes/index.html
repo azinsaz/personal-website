@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Field Notes — Ali Zinsaz</title>
+  <meta name="description" content="Essays on philosophy, AI, physics, cosmology, and the things I think about when I'm not building things." />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Field Notes — Ali Zinsaz" />
+  <meta property="og:description" content="Essays on philosophy, AI, physics, and the boundaries between them." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+  <main id="main" class="pg-page">
+
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span><span class="pb-path">field-notes</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="index.html" class="active" role="listitem">~/field-notes</a>
+        <a href="../simulations/index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <header class="pg-hero">
+      <p class="pg-hero-id">essays · notes · half-formed thoughts</p>
+      <h1>Things I think about when I'm <span class="ac">not building</span>.</h1>
+      <p class="pg-hero-lede">
+        Writing is how I think. These essays are working drafts of ideas I'm still figuring out —
+        not finished positions, but honest attempts at clarity on things that resist it.
+        Philosophy, cosmology, AI, and the places they bleed into each other.
+      </p>
+    </header>
+
+    <section class="pg-postlist" id="postlist" aria-label="essays"></section>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz · field notes</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="https://x.com/azinsaz" target="_blank" rel="noopener me">x</a>
+        <a href="https://www.linkedin.com/in/ali-zinsaz/" target="_blank" rel="noopener me">linkedin</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script>
+    (function () {
+      const list = document.getElementById('postlist');
+      list.innerHTML = DATA.essays.map(e => `
+        <a class="pg-postcard" href="${e.href.replace('field-notes/', '')}">
+          <div class="pg-postcard-meta">
+            <span>${e.date}</span>
+            <span class="tag">#${e.tag}</span>
+          </div>
+          <h2 class="pg-postcard-h">${e.title}</h2>
+          <p class="pg-postcard-excerpt">${e.excerpt || ''}</p>
+          <span class="pg-postcard-arrow">read →</span>
+        </a>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algorithmic Anxiety: Kierkegaard in the latent space — Ali Zinsaz</title>
+  <meta name="description" content="On embeddings, sampling thresholds, and the leap of faith required to commit to any output. Kierkegaard's anxiety of freedom, expressed in high-dimensional space." />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Algorithmic Anxiety: Kierkegaard in the latent space" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">field-notes</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">algorithmic-anxiety</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="index.html" role="listitem">~/field-notes</a>
+        <a href="../simulations/index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article">
+      <div class="pg-article-meta">
+        <span>2025.09</span>
+        <span class="tag">#philosophy</span>
+      </div>
+      <h1 class="pg-article-h1">Algorithmic Anxiety</h1>
+      <p class="pg-article-lede">
+        Kierkegaard's leap of faith is structurally identical to choosing a sampling threshold.
+        Both are commitments that the distribution constrains but doesn't determine.
+      </p>
+
+      <div class="pg-article-body">
+        <p>
+          Kierkegaard described anxiety as the dizziness of freedom. Not fear — fear has an object.
+          Anxiety is the vertigo that comes from confronting possibility itself:
+          the awareness that you could do this or that or nothing,
+          that the future is genuinely open, that your choices create you
+          rather than express a pre-existing self.
+          It's the anxiety of being something that has to choose what to be.
+        </p>
+        <p>
+          I keep thinking about this when I work with large language models.
+        </p>
+        <p>
+          An embedding is a compression of meaning into geometry.
+          You take a word, or a sentence, or a document, and you find its location
+          in a high-dimensional space such that things with similar meanings are close together
+          and things with different meanings are far apart. The geometry does the work of representation —
+          "king" minus "man" plus "woman" equals approximately "queen" because of how the space
+          is structured by training.
+        </p>
+        <p>
+          In the latent space, every concept exists as a point surrounded by a neighborhood
+          of related concepts. The model, when generating text, is navigating this space —
+          choosing, at each step, which neighborhood to move into next.
+          The sampling temperature is literally a dial between staying close to the highest-probability neighborhood
+          and exploring the edges of possibility. Low temperature: deterministic, safe, unimaginative.
+          High temperature: creative, surprising, unstable.
+        </p>
+        <p>
+          Kierkegaard's three stages of existence are aesthetic, ethical, and religious.
+          The aesthetic stage is pure immediate experience — sensory, instinctual, fleeting.
+          The ethical stage is commitment, consistency, the self as a project bound by obligation.
+          The religious stage is the "leap of faith" — a commitment that can't be grounded
+          in reason or ethics, a choice made in the face of uncertainty.
+        </p>
+        <p>
+          The sampling threshold in a language model is structurally identical to Kierkegaard's leap of faith.
+          You've done everything reason can do. You've computed the probability distribution over the next token.
+          You know the neighborhood. At some point you have to commit — pick something —
+          and the commitment is not derivable from the distribution.
+          It's a choice that the distribution constrains but doesn't determine.
+        </p>
+        <p>
+          The anxiety I feel about advanced AI systems is not the fear of job displacement
+          or the fear of misalignment, though those are real concerns.
+          It's something closer to what Kierkegaard felt looking at infinite possibility:
+          the awareness that these systems are navigating a space so large
+          that the map doesn't fit in any human mind, making choices at every step
+          that are constrained but not determined, and we have no good theory of which neighborhood they're in
+          when they say the things that trouble us.
+        </p>
+        <p>
+          The leap of faith, for Kierkegaard, was a commitment to God —
+          a framework that gives the choices meaning by reference to something outside them.
+          We're deploying systems that make thousands of leaps per second with no such framework.
+          And then we're surprised when they occasionally land somewhere strange.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="joy-of-finding-out.html">← prev: joy of finding out</a>
+      <a href="cosmic-ocean.html">next: cosmic ocean →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="https://x.com/azinsaz" target="_blank" rel="noopener me">x</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>

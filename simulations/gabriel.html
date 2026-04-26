@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel's horn — Simulations — Ali Zinsaz</title>
+  <meta name="description" content="Finite volume. Infinite surface area. You can fill it with paint but you cannot paint the inside of it." />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/experiments.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page" style="max-width: 920px;">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">simulations</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">gabriel</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+        <a href="index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article" style="max-width: 920px;">
+      <div class="pg-article-meta">
+        <span>finite volume</span>
+        <span class="tag">infinite surface</span>
+      </div>
+      <h1 class="pg-article-h1">Gabriel's horn</h1>
+      <p class="pg-article-lede">
+        You can fill it with paint, but you cannot paint the inside of it.
+        The first time most students realize "infinite" comes in different sizes.
+      </p>
+
+      <div class="ex-stage" data-demo="gabriel">
+        <canvas></canvas>
+        <div class="ex-readout">
+          <span class="r-name">gabriel's horn</span>
+          <span class="r-meta">∫₁^∞ π/x² dx = π</span>
+        </div>
+      </div>
+      <div class="ex-controls"></div>
+
+      <div class="pg-article-body" style="margin-top: 2rem;">
+        <p>
+          Take the curve y = 1/x for x ≥ 1. Spin it around the x-axis.
+          The shape that comes out is a horn that gets infinitely long, but infinitely thin.
+          Compute its volume:
+        </p>
+        <p class="ex-eq">
+          $$ V = \int_1^\infty \pi \left(\frac{1}{x}\right)^2 \,dx = \pi $$
+        </p>
+        <p>
+          A volume of π. Finite. You can fill it with paint. Now compute its surface area:
+        </p>
+        <p class="ex-eq">
+          $$ A = \int_1^\infty 2\pi \cdot \frac{1}{x} \sqrt{1 + \frac{1}{x^4}} \,dx \;\to\; \infty $$
+        </p>
+        <p>
+          The integrand for surface area falls like 1/x, which diverges.
+          So this object has finite volume but infinite surface area.
+          You can fill it with paint, but you cannot paint the inside of it.
+        </p>
+        <p>
+          The "paradox" dissolves once you remember: paint isn't a 2D thing.
+          Real paint has a layer thickness, and the horn gets thinner than any layer eventually.
+          Mathematically though, the contradiction is beautiful — it's the first time most students realize that
+          "infinite" comes in different sizes.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="golden.html">← prev: golden spiral</a>
+      <a href="lissajous.html">next: lissajous figure →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <script src="../js/physics.js"></script>
+  <script src="../js/experiments.js"></script>
+</body>
+</html>

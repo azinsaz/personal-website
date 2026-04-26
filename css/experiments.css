@@ -1,0 +1,269 @@
+/* ─────────────────────────────────────────────────────
+   experiments.css — page-specific styling for
+   experiments.html. Reuses .exp-* tokens from layout.css.
+───────────────────────────────────────────────────── */
+
+.ex-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 32px 80px;
+  position: relative;
+  z-index: 2;
+  color: var(--photon);
+}
+
+.ex-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--moonlight);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--horizon);
+  margin-bottom: 36px;
+}
+.ex-back {
+  color: var(--starlight);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s var(--ease);
+}
+.ex-back:hover { color: var(--accent); }
+.ex-top-sep { color: var(--rule-2); }
+.ex-top-role { color: var(--moonlight); }
+
+.ex-intro { padding: 6px 0 36px; }
+.ex-id {
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--moonlight);
+}
+.ex-id::before { content: "— "; color: var(--accent); letter-spacing: 0; }
+.ex-h {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4.4vw, 44px);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  margin: 0 0 14px;
+  font-variation-settings: "opsz" 96;
+  max-width: 22ch;
+}
+.ex-lede {
+  margin: 0 0 22px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--starlight);
+  font-style: italic;
+  max-width: 60ch;
+}
+
+.ex-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--rule);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.ex-toc a {
+  color: var(--moonlight);
+  border-bottom: 1px dashed transparent;
+  padding: 6px 2px;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.ex-toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Each experiment block */
+.ex {
+  padding: 36px 0 28px;
+  border-bottom: 1px solid var(--horizon);
+  scroll-margin-top: 24px;
+}
+.ex:last-of-type { border-bottom: 0; }
+
+.ex-hd { margin-bottom: 18px; }
+.ex-hd h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin: 0;
+  font-variation-settings: "opsz" 48;
+}
+.ex-hd .ex-meta {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--moonlight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: 12px;
+  font-weight: 400;
+  font-variation-settings: normal;
+}
+
+/* Stage on the experiments page reuses the same tokens as
+   the section but is slightly taller and full-width. */
+.ex-stage {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background:
+    radial-gradient(ellipse at 50% 70%, color-mix(in srgb, var(--bg-1) 92%, var(--accent) 8%) 0%, var(--bg-1) 55%, var(--bg) 100%);
+  border: 1px solid var(--rule-2);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -34px rgba(0,0,0,0.7);
+  margin-bottom: 14px;
+}
+.ex-stage::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-d), transparent);
+  z-index: 2;
+}
+.ex-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ex-readout {
+  position: absolute;
+  top: 12px; left: 14px;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--moonlight);
+}
+.ex-readout .r-name { color: var(--starlight); }
+.ex-readout .r-meta {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--moonlight);
+  font-variant-numeric: tabular-nums;
+}
+
+.ex-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 24px;
+  padding: 14px 16px;
+  border: 1px solid var(--horizon);
+  border-radius: 4px;
+  background: var(--bg-1);
+  margin-bottom: 22px;
+}
+.ex-controls:empty { display: none; }
+.ex-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--moonlight);
+}
+.ex-control-label { color: var(--starlight); letter-spacing: 0.04em; }
+.ex-control-val   { color: var(--accent); font-variant-numeric: tabular-nums; }
+.ex-control-slider {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) calc(var(--p, 0) * 100%),
+    var(--rule-2) calc(var(--p, 0) * 100%),
+    var(--rule-2) 100%
+  );
+  border-radius: 1px;
+  outline: none;
+  cursor: pointer;
+}
+.ex-control-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: grab;
+  border: 2px solid var(--bg-1);
+  box-shadow: 0 0 8px var(--accent-d);
+}
+.ex-control-slider::-moz-range-thumb {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: grab;
+  border: 2px solid var(--bg-1);
+  box-shadow: 0 0 8px var(--accent-d);
+}
+
+/* Prose body — reuses serif for warmth */
+.ex-prose {
+  max-width: 64ch;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--starlight);
+}
+.ex-prose p { margin: 0 0 14px; }
+.ex-prose em { color: var(--photon); font-style: italic; }
+.ex-prose code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-1);
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid var(--horizon);
+  color: var(--accent-text);
+}
+.ex-eq {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--accent-text);
+  padding: 6px 12px;
+  margin: 8px 0 18px !important;
+  border-left: 2px solid var(--accent-d);
+}
+
+.ex-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0 0;
+  border-top: 1px solid var(--horizon);
+  margin-top: 50px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--moonlight);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 720px) {
+  .ex-page { padding: 24px 20px 60px; }
+  .ex-stage { height: 240px; }
+  .ex-controls { padding: 12px; gap: 12px 16px; }
+}

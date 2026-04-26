@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulations — Ali Zinsaz</title>
+  <meta name="description" content="Interactive physics and math simulations: the Higgs collision, the Lorenz attractor, the golden spiral, Gabriel's horn, the Lissajous figure. Live, interactive, annotated." />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Simulations — Ali Zinsaz" />
+  <meta property="og:description" content="Five small worlds. Five animated equations. Drag the sliders." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+  <main id="main" class="pg-page">
+
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span><span class="pb-path">simulations</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+        <a href="index.html" class="active" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <header class="pg-hero">
+      <p class="pg-hero-id">five small worlds · five animated equations</p>
+      <h1>Things I render to <span class="ac">remember</span> they're real.</h1>
+      <p class="pg-hero-lede">
+        Each of these is a live simulation, not a video. Drag the sliders; the math reacts.
+        Each page has the equation, the physical story, and the moment it broke my brain
+        the first time I met it.
+      </p>
+    </header>
+
+    <section class="pg-simgrid" aria-label="simulations">
+      <a class="pg-simcard" href="higgs.html">
+        <span class="pg-simcard-eq">pp → H → γγ</span>
+        <h2 class="pg-simcard-h">Higgs collision</h2>
+        <p class="pg-simcard-blurb">CMS event display at √s = 13 TeV. Charged particles spiraling in a 3.8 T solenoid. The $125\,\text{GeV}$ excess that took 50 years and 10,000 people to find.</p>
+      </a>
+
+      <a class="pg-simcard" href="lorenz.html">
+        <span class="pg-simcard-eq">dx/dt = σ(y−x)</span>
+        <h2 class="pg-simcard-h">Lorenz attractor</h2>
+        <p class="pg-simcard-blurb">Three ordinary differential equations. Nothing hidden, nothing random, nothing quantum. And, in practice, completely unforecastable. The first chaos.</p>
+      </a>
+
+      <a class="pg-simcard" href="golden.html">
+        <span class="pg-simcard-eq">φ = (1+√5)/2</span>
+        <h2 class="pg-simcard-h">Golden spiral</h2>
+        <p class="pg-simcard-blurb">A logarithmic spiral with a famous growth factor. The math is real; the "nature loves φ" claim is mostly post-hoc pattern matching. But plants and shadows, yes.</p>
+      </a>
+
+      <a class="pg-simcard" href="gabriel.html">
+        <span class="pg-simcard-eq">V = π · A → ∞</span>
+        <h2 class="pg-simcard-h">Gabriel's horn</h2>
+        <p class="pg-simcard-blurb">Finite volume. Infinite surface area. You can fill it with paint but you cannot paint the inside of it. The first time most students realize "infinite" comes in different sizes.</p>
+      </a>
+
+      <a class="pg-simcard" href="lissajous.html">
+        <span class="pg-simcard-eq">x = sin(at+δ), y = sin(bt)</span>
+        <h2 class="pg-simcard-h">Lissajous figure</h2>
+        <p class="pg-simcard-blurb">Two perpendicular sine waves. Closed when the frequency ratio is rational. Phase drift turns the math into a movie. Pre-digital oscilloscopes used these to tune signals by eye.</p>
+      </a>
+    </section>
+
+    <section class="pg-section" id="roadmap" style="margin-top: 4rem;">
+      <div class="pg-section-meta">
+        <span class="pg-section-slug">roadmap</span>
+        <span class="pg-section-role">work in progress</span>
+      </div>
+      <h2>Next up</h2>
+      <p class="pg-section-tagline">Two simulations I want to build next. Neither is simple. Both are worth doing.</p>
+      <div class="pg-prose">
+        <p>
+          <strong>Black hole simulation.</strong> Runge-Kutta numerical integration
+          of the relativistic geodesic equations. Photon paths bending around a Schwarzschild black hole,
+          rendered in real time. The goal is to show the photon sphere — the radius at which light orbits —
+          and the shadow.
+        </p>
+        <p>
+          <strong>N-body galaxy simulation.</strong> Gravitational simulation of galaxy formation.
+          Start with a disk of mass, perturb it, watch spiral arms emerge from gravity alone.
+          The interesting part is not the simulation — it's the numerical stability over long timescales.
+        </p>
+      </div>
+    </section>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz · simulations</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+
+  </main>
+
+  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</body>
+</html>

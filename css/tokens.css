@@ -1,0 +1,151 @@
+/* ─────────────────────────────────────────────────────
+   tokens.css — design tokens, reset, base typography
+───────────────────────────────────────────────────── */
+
+:root {
+  /* ── Surfaces ── named for the cosmic depth they represent ── */
+  --void:       #09090d;  /* background of background */
+  --subatomic:  #0d0d12;  /* cards, sidebar paint */
+  --dust:       #12121a;  /* interactive surfaces */
+  --nebula:     #1a1a24;  /* pressed states, pills */
+
+  /* ── Hairlines ── the thin lines that hold the universe together ── */
+  --horizon:    #1b1b24;  /* default hairline */
+  --parallax:   #262632;  /* emphasized rule */
+
+  /* ── Light ── text at decreasing luminosity ── */
+  --photon:     #f2f2ee;  /* primary text */
+  --starlight:  #a6a6aa;  /* secondary text */
+  --moonlight:  #8d8d93;  /* tertiary text — AA on void (5.5:1) and on dust/nebula */
+  --cmb:        #6c6c72;  /* faint; reserved for non-text decoration only */
+
+  /* ── Back-compat aliases so existing declarations keep working ── */
+  --bg:     var(--void);
+  --bg-1:   var(--subatomic);
+  --bg-2:   var(--dust);
+  --bg-3:   var(--nebula);
+  --rule:   var(--horizon);
+  --rule-2: var(--parallax);
+  --fg:     var(--photon);
+  --fg-2:   var(--starlight);
+  --fg-3:   var(--moonlight);
+  --fg-4:   var(--cmb);
+
+  /* Accent — saturated amber (active, pending, warning) */
+  --accent:      #ff8a3c;
+  --accent-2:    #e06a1a;
+  --accent-text: #ffb37a;
+  --accent-g:    rgba(255, 138, 60, 0.14);  /* glow */
+  --accent-d:    rgba(255, 138, 60, 0.28);  /* dim */
+
+  /* Secondary — phosphor green (ok, stable, settled) */
+  --ok:          #84e88a;
+  --ok-text:     #a8efaa;
+  --ok-g:        rgba(132, 232, 138, 0.12);
+  --ok-d:        rgba(132, 232, 138, 0.22);
+
+  /* Fonts */
+  --font-ui:      'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: 'Fraunces', 'Instrument Serif', Georgia, serif;
+  --font-serif:   'Instrument Serif', Georgia, serif;
+  --font-mono:    'Geist Mono', ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Easing + motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Density: tight */
+  --gap-xxs: 4px;
+  --gap-xs:  6px;
+  --gap-s:   10px;
+  --gap-m:   14px;
+  --gap-l:   20px;
+  --gap-xl:  32px;
+  --gap-xxl: 56px;
+
+  /* Dimensions */
+  --sb-w:    280px;
+  --main-w:  860px;
+  --content-w: 860px;
+}
+
+/* ── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+button { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; }
+input { font: inherit; color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Base ──────────────────────────────────────── */
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01', 'ss02';
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: #0a0500; }
+
+/* Scrollbars (main) */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--rule-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--fg-4); }
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.terminal:focus-within { outline: none; }
+input:focus { outline: none; }
+
+/* Skip link (a11y) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #0a0500;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 999;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* kbd base */
+kbd {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  background: var(--bg-2);
+  border: 1px solid var(--rule-2);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--fg-2);
+  vertical-align: baseline;
+  letter-spacing: 0.02em;
+}

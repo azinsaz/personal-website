@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lissajous figure — Simulations — Ali Zinsaz</title>
+  <meta name="description" content="Two perpendicular sine waves. Closed curves when the frequency ratio is rational. Pre-digital oscilloscope tuning, made interactive." />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/experiments.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page" style="max-width: 920px;">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">simulations</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">lissajous</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+        <a href="index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article" style="max-width: 920px;">
+      <div class="pg-article-meta">
+        <span>two perpendicular sines</span>
+        <span class="tag">phase drift</span>
+      </div>
+      <h1 class="pg-article-h1">Lissajous figure</h1>
+      <p class="pg-article-lede">
+        Two perpendicular sine waves. Closed curves when the frequency ratio is rational —
+        never closing when it's not. Phase drift turns the math into a movie.
+      </p>
+
+      <div class="ex-stage" data-demo="lissajous">
+        <canvas></canvas>
+        <div class="ex-readout">
+          <span class="r-name">lissajous figure</span>
+          <span class="r-meta">a:b = 3:5 · δ̇ = 0.012</span>
+        </div>
+      </div>
+      <div class="ex-controls"></div>
+
+      <div class="pg-article-body" style="margin-top: 2rem;">
+        <p>
+          Take a particle whose horizontal position is one sine wave and whose vertical position is another.
+          Vary their frequencies and relative phase. The trajectory is a closed curve when the frequency ratio
+          is rational, and never closes when it's irrational.
+        </p>
+        <p class="ex-eq">
+          $$ x(t) = A\sin(at + \delta),\quad y(t) = B\sin(bt) $$
+        </p>
+        <p>
+          Before oscilloscopes had digital readouts, you'd hook two signals to the X and Y plates of a CRT
+          and read the frequency ratio off the Lissajous figure by eye.
+          Two perfectly tuned signals lock into a stationary curve;
+          if one drifts, the figure rotates slowly, and how fast it rotates tells you the drift rate.
+        </p>
+        <p>
+          Try 3:5 (the default) — a tight knot. Try 1:1 — a circle (or a line, depending on phase).
+          Try 7:9 — something that looks like the trace of a thoughtful spirograph.
+          The phase-drift slider controls how slowly the figure morphs as the relative phase slips,
+          which is the part that turns the math into a movie.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="gabriel.html">← prev: gabriel's horn</a>
+      <a href="index.html">all simulations →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <script src="../js/physics.js"></script>
+  <script src="../js/experiments.js"></script>
+</body>
+</html>

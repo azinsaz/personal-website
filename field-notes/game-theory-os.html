@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game theory is my operating system — Ali Zinsaz</title>
+  <meta name="description" content="A framework for decisions, lived from the inside. Iterated games, minimax regret, and why defection is almost always a mistake when reputation is on the line." />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Game theory is my operating system" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">field-notes</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">game-theory-os</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="index.html" role="listitem">~/field-notes</a>
+        <a href="../simulations/index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article">
+      <div class="pg-article-meta">
+        <span>2026.03</span>
+        <span class="tag">#philosophy</span>
+      </div>
+      <h1 class="pg-article-h1">Game theory is my operating system</h1>
+      <p class="pg-article-lede">
+        I don't use game theory as a textbook framework. I use it the way a carpenter uses a level —
+        a quick sanity check on whether the structure I'm building is plumb.
+      </p>
+
+      <div class="pg-article-body">
+        <p>
+          The question I'm always asking, implicitly, is: what kind of game am I in?
+          This matters because the optimal strategy in a one-shot game is often the opposite
+          of the optimal strategy in a repeated game. In a one-shot prisoner's dilemma, you defect —
+          it's the dominant strategy. In a repeated prisoner's dilemma with no defined end,
+          you cooperate — the shadow of the future is long enough to make defection self-defeating.
+          Most of the decisions people make badly are one-shot-game thinking applied to repeated-game situations.
+        </p>
+        <p>
+          Working at Autodesk while building ProPilot is a game I think about carefully.
+          The naive framing is: I'm trading time I could be spending on my startup
+          for a salary that funds my life while the startup grows. That's accurate but incomplete.
+          The full framing is: I'm playing a coordination game with my future self.
+          The constraint is financial runway, not ambition. Defecting early —
+          leaving before I have enough funding — doesn't maximize my expected outcome,
+          it just compresses the timeline in a way that makes failure more likely.
+          The September 2026 target for ProPilot's seed round exists for this reason:
+          it's the point at which the expected value of leaving exceeds the expected value of staying,
+          given everything I know about the probabilities.
+        </p>
+        <p>
+          The Eigen origin story is also a game theory story. My father has been trading for 30 years.
+          The decision to build a system on his intuition rather than starting from scratch
+          was a minimax regret decision: the worst outcome of building on a flawed foundation
+          is a system that loses money predictably, which is recoverable. The worst outcome of ignoring
+          30 years of pattern recognition is building something technically correct that misses market structure entirely,
+          which is not recoverable in the same way. The regret-minimizing choice was to start from his intuition
+          and let the data tell me what to keep.
+        </p>
+        <p>
+          The mentAimage equity negotiation is the clearest example of iterated game reasoning.
+          5% at 4-year vest, 1-year cliff is a standard fractional CTO structure.
+          I could have negotiated harder for more equity upfront. But this is an iterated game:
+          the value I deliver in year one determines what year two looks like,
+          and a negotiation that starts from trust is more likely to compound well
+          than one that starts from extraction. I've defected in one-shot situations exactly once
+          in my professional life and I still think about it.
+        </p>
+        <p>
+          The meta-lesson I keep re-learning is that most situations I encounter
+          are iterated games with people who have long memories and professional networks.
+          Reputation is a repeated game asset — it appreciates or depreciates based on every interaction,
+          and it's nearly impossible to rebuild once damaged. This doesn't mean never pushing hard.
+          It means knowing when you're negotiating and when you're setting terms for a relationship,
+          and understanding that the second activity is almost always more important.
+        </p>
+        <p>
+          There's a darker version of this framework that I sit with occasionally.
+          Game theory is descriptive, not prescriptive — it tells you what agents in certain conditions will do,
+          not what they should do. The prisoner's dilemma is a well-studied problem because it captures real tragedy:
+          two people who would both be better off cooperating defect anyway because defection is the locally dominant choice.
+          Understanding game theory makes you better at winning games. It doesn't always help you feel good about winning them.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="rocks-that-think.html">← prev: rocks that think</a>
+      <a href="stardust-state-machines.html">next: stardust →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="https://x.com/azinsaz" target="_blank" rel="noopener me">x</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>

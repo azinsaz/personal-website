@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golden spiral — Simulations — Ali Zinsaz</title>
+  <meta name="description" content="A logarithmic spiral with the golden ratio as its growth factor. The math is real. The cultural mythology is mostly post-hoc pattern matching." />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/experiments.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page" style="max-width: 920px;">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">simulations</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">golden</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+        <a href="index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article" style="max-width: 920px;">
+      <div class="pg-article-meta">
+        <span>φ ≈ 1.61803</span>
+        <span class="tag">logarithmic growth</span>
+      </div>
+      <h1 class="pg-article-h1">Golden spiral</h1>
+      <p class="pg-article-lede">
+        A logarithmic spiral with a famous growth factor.
+        The math is real; the cultural mythology around it is mostly post-hoc pattern matching.
+      </p>
+
+      <div class="ex-stage" data-demo="golden">
+        <canvas></canvas>
+        <div class="ex-readout">
+          <span class="r-name">golden spiral</span>
+          <span class="r-meta">n=8 · φ ≈ 1.618</span>
+        </div>
+      </div>
+      <div class="ex-controls"></div>
+
+      <div class="pg-article-body" style="margin-top: 2rem;">
+        <p>
+          Take the Fibonacci sequence — each number the sum of the two before it.
+          Tile squares with those side lengths, spiraling out.
+          Connect the corners with quarter-arcs. The result is a logarithmic spiral
+          whose growth factor per quarter-turn approaches the golden ratio:
+        </p>
+        <p class="ex-eq">
+          $$ \varphi = \frac{1 + \sqrt{5}}{2} = \lim_{n\to\infty} \frac{F_{n+1}}{F_n} $$
+        </p>
+        <p>
+          The math is real. The "nature loves φ" claim is mostly post-hoc pattern-matching:
+          nautilus shells aren't actually golden spirals,
+          and the Parthenon's dimensions don't quite hit the ratio either.
+          What <em>is</em> real is that the spiral solves a specific problem:
+          if a plant adds new leaves at angle 360°/φ², no two leaves ever shadow each other
+          for a very long time.
+        </p>
+        <p>
+          The growth-factor slider lets you walk through nearby spirals.
+          At 1.20 you get the loose curl of an unfurling fern; at 2.4, the tight whorl of a snail.
+          Only one of those is golden, and you will immediately see why people felt the need to invent the word.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="lorenz.html">← prev: lorenz attractor</a>
+      <a href="gabriel.html">next: gabriel's horn →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <script src="../js/physics.js"></script>
+  <script src="../js/experiments.js"></script>
+</body>
+</html>

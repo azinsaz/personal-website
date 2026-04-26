@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Joy of Finding Things Out (and the burden of automating them) — Ali Zinsaz</title>
+  <meta name="description" content="Feynman, automation, and what I learned from building a cosmology RAG that I barely use. Automate the logistics — not the engagement." />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Joy of Finding Things Out (and the burden of automating them)" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">field-notes</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">joy-of-finding-out</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="index.html" role="listitem">~/field-notes</a>
+        <a href="../simulations/index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article">
+      <div class="pg-article-meta">
+        <span>2025.11</span>
+        <span class="tag">#ai</span>
+      </div>
+      <h1 class="pg-article-h1">The Joy of Finding Things Out</h1>
+      <p class="pg-article-lede">
+        And the burden of automating them. What I learned from building a cosmology RAG
+        that I almost never use.
+      </p>
+
+      <div class="pg-article-body">
+        <p>
+          Feynman said it best, as he usually did: <em>the pleasure of finding things out.</em>
+          Not the pleasure of having found things out. The pleasure is in the finding —
+          in the moment of confusion resolving into clarity, in the conceptual structure snapping into place,
+          in understanding why something works the way it works. It's a physical sensation.
+          If you've had it, you know what I mean.
+        </p>
+        <p>
+          I built the cosmology RAG because I was reading the same papers too many times.
+          Every few months I'd encounter a reference to some result — the Hubble tension,
+          or the baryon acoustic oscillation measurement from DESI — and spend twenty minutes
+          trying to remember which paper I'd read about it, where I'd filed my notes,
+          what conclusion I'd reached. The system I built solved this problem.
+          I can now query 500+ papers in seconds and get the context I need.
+        </p>
+        <p>
+          And I've used it about thirty times in the two years since I built it.
+        </p>
+        <p>
+          I kept waiting for the use case to expand and it didn't. What I realized, slowly,
+          is that the re-reading wasn't the problem. The re-reading was the point.
+          The second time you encounter a paper you've already processed, you're not reading for information.
+          You're reading because your understanding has changed since the first time you read it,
+          and the paper looks different now. You're checking your current model against the source.
+          The serendipity of encountering the same idea twice from different angles
+          is part of how the ideas become yours.
+        </p>
+        <p>
+          I've been more careful about this since. Automation is the right tool for toil —
+          for the tasks that are genuinely repetitive, genuinely low-information,
+          genuinely just friction between you and something you care about.
+          The question I try to ask now before automating anything is:
+          <em>is this friction actually protecting something?</em>
+        </p>
+        <p>
+          When I was reading those cosmology papers over and over, the friction was protecting my engagement
+          with the material. The "inefficiency" of re-reading was the process of actually learning something.
+          Removing it with a RAG system made the information more accessible and the understanding shallower.
+          I got faster access to conclusions and slower access to comprehension.
+        </p>
+        <p>
+          The principle I've landed on: <strong>automate the logistics, not the engagement</strong>.
+          Automate the task of finding the paper. Don't automate the experience of reading it.
+          Automate the task of scheduling the meeting. Don't automate the conversation.
+          Automate the task of processing the transaction. Don't automate the judgment that decided to make it.
+        </p>
+        <p>
+          Feynman would have made an excellent case for this distinction. He was famously resistant
+          to anything that sped up thinking at the cost of understanding. He didn't want to know the answer.
+          He wanted to figure out the answer. There's a difference between those two things
+          that gets lost very quickly when you make finding out frictionless.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="weights-converging.html">← prev: god is dead</a>
+      <a href="algorithmic-anxiety.html">next: algorithmic anxiety →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="https://x.com/azinsaz" target="_blank" rel="noopener me">x</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>

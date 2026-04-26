@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Zinsaz — in Montreal, of the universe</title>
+  <meta name="description" content="Physics & engineering. Building autonomous AI systems, quantitative models, and wondering about the void. Co-founder of ProPilot, founder of Eigen FinTech." />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ali Zinsaz — in Montreal, of the universe" />
+  <meta property="og:description" content="Physics & engineering. Co-founder of ProPilot · Founder of Eigen · Builder by compulsion." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+
+  <div class="page">
+
+    <!-- ─── MAIN ─── -->
+    <div class="main">
+
+      <!-- Top strip — brand + ⌘K search only -->
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          Ali
+        </a>
+        <span class="topbar-spacer"></span>
+        <button class="topbar-search" id="top-search" aria-label="open search (⌘K)">
+          <span class="ts-glyph" aria-hidden="true">⌕</span>
+          <span class="ts-label">search everything…</span>
+          <span class="ts-key"><kbd aria-hidden="true">⌘</kbd><kbd aria-hidden="true">K</kbd></span>
+        </button>
+      </header>
+
+      <!-- Backdrop shown only when the kernel window is expanded to modal -->
+      <div class="kwin-backdrop" id="kwin-backdrop" hidden></div>
+
+      <!-- ─── Kernel window (floating; OS-style traffic lights) ─── -->
+      <aside class="kwin" id="kwin" role="complementary" aria-label="kernel log">
+        <header class="kwin-bar">
+          <div class="kwin-traffic" aria-hidden="false">
+            <button class="kw-light kw-close" id="kw-close" aria-label="close kernel window" title="close">
+              <span class="kw-glyph" aria-hidden="true">×</span>
+            </button>
+            <button class="kw-light kw-min" id="kw-min" aria-label="minimize kernel window" title="minimize">
+              <span class="kw-glyph" aria-hidden="true">−</span>
+            </button>
+            <button class="kw-light kw-max" id="kw-max" aria-label="expand kernel window" title="expand">
+              <span class="kw-glyph" aria-hidden="true">+</span>
+            </button>
+          </div>
+          <span class="kwin-title">tty/milky-way · kernel 13.8</span>
+          <span class="kwin-status" id="sb-status">booting…</span>
+        </header>
+        <div class="kwin-body">
+          <div class="kwin-log" aria-live="off" aria-hidden="true">
+            <div class="sb-log-inner" id="sb-log"></div>
+          </div>
+          <footer class="kwin-foot">
+            <span class="kwin-uptime" id="sb-uptime">—</span>
+          </footer>
+        </div>
+      </aside>
+
+      <!-- Reopener — appears only when the window is closed -->
+      <button class="kwin-reopen" id="kwin-reopen" hidden aria-label="reopen kernel window">
+        <span class="kwin-reopen-dot" aria-hidden="true"></span>
+        kernel
+      </button>
+
+      <main id="main" class="main-content">
+
+        <!-- Hero -->
+        <section class="hero" id="top">
+          <p class="hero-id">a brief arrangement of stardust · presently coherent</p>
+          <h1 class="hero-h">
+            I build things <span class="ac">worth making</span>,
+            and wonder about things <span class="ac">worth knowing</span>.
+          </h1>
+
+          <div class="terminal" id="terminal">
+            <div class="terminal-bar">
+              <span class="t-pill" aria-label="live">
+                <span class="t-pill-dot" aria-hidden="true"></span>live
+              </span>
+              <span class="t-title" role="presentation">
+                <span class="t-at">ali</span>@localhost ~
+              </span>
+              <span class="t-shell">zsh</span>
+            </div>
+            <div class="terminal-body" id="term-body" role="log" aria-live="polite"></div>
+          </div>
+
+          <nav class="chips" aria-label="quick commands" id="chips">
+            <button class="chip" data-cmd="whoami">whoami<kbd>W</kbd></button>
+            <button class="chip" data-cmd="projects">projects<kbd>P</kbd></button>
+            <button class="chip" data-cmd="writing">writing<kbd>R</kbd></button>
+            <button class="chip" data-cmd="beliefs">beliefs<kbd>B</kbd></button>
+            <button class="chip" data-cmd="contact">contact<kbd>C</kbd></button>
+            <button class="chip" data-cmd="ls">ls<kbd>L</kbd></button>
+            <button class="chip" data-cmd="help">help<kbd>?</kbd></button>
+          </nav>
+
+          <p class="hero-hint">
+            type anything above, or press <kbd>⌘K</kbd> for fuzzy search
+            <span class="hint-sep">·</span>
+            <kbd>↑</kbd><kbd>↓</kbd> history
+            <span class="hint-sep">·</span>
+            <kbd>tab</kbd> complete
+            <span class="hint-sep">·</span>
+            <kbd>⌘L</kbd> clear
+          </p>
+        </section>
+
+        <!-- Below-fold -->
+        <div class="below">
+
+          <section class="sec" id="projects" data-section="projects">
+            <div class="sec-hd">
+              <h2>Career</h2>
+              <div class="sec-meta">since 2021</div>
+            </div>
+            <div id="below-work"></div>
+          </section>
+
+          <section class="sec sec-exp" id="experiments" data-section="experiments">
+            <div class="sec-hd">
+              <h2>Living equations</h2>
+              <div class="sec-meta">animated · interactive</div>
+            </div>
+
+            <div class="exp">
+              <div class="exp-tabs" role="tablist" id="exp-tabs"></div>
+
+              <div class="exp-stage">
+                <div class="exp-readout" id="exp-readout" aria-hidden="true">
+                  <span class="exp-readout-name" id="exp-name">—</span>
+                  <span class="exp-readout-meta" id="exp-meta"></span>
+                </div>
+                <canvas id="exp-canvas" aria-label="physics demo canvas"></canvas>
+              </div>
+
+              <div class="exp-foot">
+                <p class="exp-cap" id="exp-cap"></p>
+                <a class="exp-more" id="exp-more" href="simulations/index.html">tune it · read the full story →</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec" id="writing" data-section="writing">
+            <div class="sec-hd">
+              <h2>Field notes</h2>
+              <div class="sec-meta"><a href="field-notes/index.html">all entries →</a></div>
+            </div>
+            <div id="below-essays"></div>
+          </section>
+
+          <section class="sec" id="beliefs" data-section="beliefs">
+            <div class="sec-hd">
+              <h2>Calibrated guesses</h2>
+              <div class="sec-meta">held loosely · revised often</div>
+            </div>
+            <ul class="beliefs-list">
+              <li><strong>Agnostic Autonomy</strong> — Nationalism is an outdated protocol; borders are violent fictions. I don't know if a prime mover exists, but I am certain the universe has no designated jurisdictions. Code transcends geography — so should human movement.</li>
+              <li><strong>Optimistic Nihilism</strong> — The cosmos owes us no meaning, and it is wildly liberating to compile our own. Memento mori isn't morbid; it is the ultimate compiler warning. We are briefly coherent stardust building things that won't last — which is precisely why we must build them beautifully.</li>
+              <li><strong>Scientific Rigor</strong> — Science and art are identical projects running on different hardware: both attempt to compress the infinite universe into a format humans can hold. But a model is never the territory. We measure rigorously, knowing our tools are small.</li>
+              <li><strong>Calibrated Humility</strong> — Certainty is a cognitive vulnerability. Ideology is simply a frozen answer to a question that must remain open. I do not believe in believing. "I don't know" is the highest-resolution map of reality we possess.</li>
+              <li><strong>Automation as Sovereignty</strong> — Eliminating toil is a moral imperative, not a productivity hack. Machines exist to handle the deterministic, freeing consciousness to experience the absurd. We automate the repetitive to reclaim the only finite resource we have: time.</li>
+            </ul>
+          </section>
+
+        </div>
+      </main>
+
+      <footer class="foot">
+        <span>Ali Zinsaz · made by hand, mostly</span>
+        <nav aria-label="social" class="foot-links foot-icons">
+          <a href="https://github.com/azinsaz" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://gitlab.com/azinsaz" target="_blank" rel="noopener me" aria-label="GitLab" title="GitLab">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.845.904a.9.9 0 0 0-.878.59L.09 13.24a1.27 1.27 0 0 0 .46 1.424l11.43 8.308a.314.314 0 0 0 .37-.002l11.43-8.306a1.27 1.27 0 0 0 .46-1.424L20.044 1.495a.9.9 0 0 0-.877-.59.9.9 0 0 0-.851.61l-2.957 9.094H8.641L5.684 1.516a.9.9 0 0 0-.839-.612z"/></svg>
+          </a>
+          <a href="https://x.com/azinsaz" target="_blank" rel="noopener me" aria-label="X (Twitter)" title="X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ali-zinsaz/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ali_zinsaz" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="mailto:azinsaz@gmail.com" rel="me" aria-label="Email" title="azinsaz@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <span class="foot-discord" title="Discord: azinsaz">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            azinsaz
+          </span>
+        </nav>
+      </footer>
+    </div>
+
+    <!-- ─── ⌘K palette ─── -->
+    <div class="palette-overlay" id="palette" role="dialog" aria-label="command palette" aria-modal="true">
+      <div class="palette">
+        <div class="palette-bar">
+          <span class="palette-dot" aria-hidden="true"></span>
+          <span class="palette-title">search · @azinsaz</span>
+          <span class="palette-esc">esc to close</span>
+        </div>
+        <div class="palette-input-wrap">
+          <input
+            class="palette-input"
+            id="palette-input"
+            type="text"
+            placeholder='try "free will", "kepler", or hit ↓'
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="search"
+          />
+        </div>
+        <div class="palette-list" id="palette-list" role="listbox"></div>
+        <div class="palette-foot">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd class="ok">↵</kbd> open</span>
+          <span id="palette-count">0</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/palette.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/physics.js"></script>
+</body>
+</html>

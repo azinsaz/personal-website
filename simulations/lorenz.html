@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lorenz attractor — Simulations — Ali Zinsaz</title>
+  <meta name="description" content="The strange attractor that started chaos theory. Three ODEs, completely deterministic, completely unforecastable." />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/effects.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/experiments.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <main id="main" class="pg-page" style="max-width: 920px;">
+    <nav class="pg-nav" aria-label="site navigation">
+      <div class="pg-breadcrumb">
+        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
+        <span class="pb-sep">~</span><span class="pb-sep">/</span>
+        <a href="index.html" style="color: var(--fg-3); text-decoration: none;">simulations</a>
+        <span class="pb-sep">/</span>
+        <span class="pb-path">lorenz</span>
+      </div>
+      <div class="pg-worlds" role="list">
+        <a href="../index.html" role="listitem">~/home</a>
+        <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
+        <a href="index.html" role="listitem">~/simulations</a>
+      </div>
+    </nav>
+
+    <article class="pg-article" style="max-width: 920px;">
+      <div class="pg-article-meta">
+        <span>3 ODEs</span>
+        <span class="tag">the first chaos</span>
+      </div>
+      <h1 class="pg-article-h1">Lorenz attractor</h1>
+      <p class="pg-article-lede">
+        Three variables, one differential equation each. Nothing hidden, nothing random, nothing quantum.
+        And, in practice, unforecastable.
+      </p>
+
+      <div class="ex-stage" data-demo="lorenz">
+        <canvas></canvas>
+        <div class="ex-readout">
+          <span class="r-name">lorenz attractor</span>
+          <span class="r-meta">σ=10 · ρ=28 · β=8/3</span>
+        </div>
+      </div>
+      <div class="ex-controls"></div>
+
+      <div class="pg-article-body" style="margin-top: 2rem;">
+        <p>
+          In 1963 Edward Lorenz was running a baby weather model on a Royal McBee LGP-30.
+          He restarted a simulation halfway through, typing the state from a printout,
+          and got a totally different forecast. The printout had three decimal places;
+          the computer kept six.
+        </p>
+        <p class="ex-eq">
+          $$ \dot x = \sigma(y - x),\quad \dot y = x(\rho - z) - y,\quad \dot z = xy - \beta z $$
+        </p>
+        <p>
+          That tiny initial-conditions discrepancy is what we now call <em>sensitive dependence</em>,
+          or more cinematically, the butterfly effect. The shape on the page is the strange attractor —
+          every trajectory ends up tracing it, but no two trajectories ever cross,
+          and which lobe you're in next is, for practical purposes, unpredictable.
+        </p>
+        <p>
+          Drag <code>ρ</code> below ~24.74 and the chaos folds back into a stable spiral;
+          the attractor stops being strange. Push <code>σ</code> higher and the lobes get steeper.
+          Try <code>β = 0.5</code> and watch the dynamics get strangled: less geometry, less room to breathe.
+        </p>
+        <p>
+          The deep point: this system has three variables, one differential equation each.
+          There is nothing hidden, nothing random, nothing quantum. And it is, in practice, unforecastable.
+        </p>
+      </div>
+    </article>
+
+    <nav class="pg-article-nav" aria-label="post navigation">
+      <a href="higgs.html">← prev: higgs collision</a>
+      <a href="golden.html">next: golden spiral →</a>
+    </nav>
+
+    <footer class="pg-footer">
+      <span>Ali Zinsaz</span>
+      <nav class="pg-footer-links" aria-label="social">
+        <a href="https://github.com/azinsaz" target="_blank" rel="noopener me">github</a>
+        <a href="mailto:azinsaz@gmail.com">mail</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>MathJax = { tex: { inlineMath: [['$', '$']] } };</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <script src="../js/physics.js"></script>
+  <script src="../js/experiments.js"></script>
+</body>
+</html>
