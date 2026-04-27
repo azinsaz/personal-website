@@ -1,0 +1,25 @@
+{
+  "name": "Ali Zinsaz",
+  "short_name": "alizinsaz",
+  "description": "Physics & engineering. Building autonomous AI systems, quantitative models, and wondering about the void.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#09090d",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "lang": "en",
+  "categories": ["personal", "technology", "philosophy"]
+}

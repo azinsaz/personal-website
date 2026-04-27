@@ -53,7 +53,7 @@
   document.getElementById("below-essays").innerHTML = DATA.essays
     .map(
       (e) => `
-      <a class="essay" href="${e.href || "field-notes/index.html"}">
+      <a class="essay" href="/${e.href || "field-notes/"}">
         <span class="essay-d">${e.date}</span>
         <span class="essay-t">${e.title}</span>
         <span class="essay-tag">#${e.tag}</span>
@@ -224,9 +224,19 @@
         setState("default");
     });
 
-    // Restore prior state, or default to open. Max never auto-restores.
+    // Restore prior state. Max never auto-restores. On mobile, default to
+    // closed — the floating window dominates a 375px viewport — but honor an
+    // explicit "min" the user picked.
     const saved = load();
-    setState(saved && saved !== "max" ? saved : "default");
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    const initial = isMobile
+      ? saved === "min"
+        ? "min"
+        : "closed"
+      : saved && saved !== "max"
+        ? saved
+        : "default";
+    setState(initial);
   })();
 
   /* ── Init ───────────────────────────────────────── */

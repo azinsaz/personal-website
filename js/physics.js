@@ -709,7 +709,7 @@
       );
       nameEl.textContent = d.name;
       capEl.textContent = d.caption;
-      moreEl.href = `simulations/${id}.html`;
+      moreEl.href = `/simulations/${id}`;
 
       // Sliders are intentionally absent on the index — controls live on
       // experiments.html. The section here is a quiet preview.

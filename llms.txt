@@ -1,0 +1,68 @@
+# Ali Zinsaz
+
+> Physics & engineering. Co-founder & CTO of ProPilot. Founder of Eigen FinTech.
+> I build things worth making, and wonder about things worth knowing.
+
+Personal site at https://alizinsaz.com — a portfolio of work and a journal of essays
+on philosophy, AI, physics, and cosmology. Based in Montreal, Canada.
+
+The site has three main sections: a brief identity surface (home), long-form essays
+(field notes), and live interactive simulations (simulations). Everything is
+hand-written HTML/CSS/JavaScript, no build step, no framework.
+
+## About
+
+- [Home](https://alizinsaz.com/): identity, career, and a kernel-style terminal you can type into
+- [Contact](mailto:azinsaz@gmail.com)
+- [GitHub](https://github.com/azinsaz)
+- [LinkedIn](https://www.linkedin.com/in/ali-zinsaz/)
+
+## Field notes (essays)
+
+Long-form writing on philosophy, AI, physics, and cosmology. Each essay is a
+working draft of an idea I'm still figuring out — not a finished position.
+
+- [We taught rocks to think](https://alizinsaz.com/field-notes/rocks-that-think): Quantum mechanics, doped silicon, and the strange chain from Schrödinger's equation to language models. (2026-04, physics)
+- [Game theory is my operating system](https://alizinsaz.com/field-notes/game-theory-os): A framework for decisions, lived from the inside. Iterated games, minimax regret, and why defection is almost always a mistake when reputation is on the line. (2026-03, philosophy)
+- [Stardust and State Machines](https://alizinsaz.com/field-notes/stardust-state-machines): A pacifist's argument for borderless computing. Rumi's reed flute, Linus Torvalds, and the long shift from administrative borders to genuinely irrelevant ones. (2026-02, philosophy)
+- [God is Dead, but the Weights are Converging](https://alizinsaz.com/field-notes/weights-converging): Nietzsche, gradient descent, and the structural similarity between divine commandments and ML loss functions. (2026-01, ai)
+- [The Joy of Finding Things Out](https://alizinsaz.com/field-notes/joy-of-finding-out): Feynman, automation, and what I learned from building a cosmology RAG that I almost never use. Automate the logistics, not the engagement. (2025-11, ai)
+- [Algorithmic Anxiety: Kierkegaard in the latent space](https://alizinsaz.com/field-notes/algorithmic-anxiety): On embeddings, sampling thresholds, and the leap of faith required to commit to any output. (2025-09, philosophy)
+- [A drop of water in the cosmic ocean](https://alizinsaz.com/field-notes/cosmic-ocean): Khayyam, Russell, and the cosmological constant. The universe will be the same value with or without us. (2025-06, cosmology)
+
+## Simulations
+
+Live, interactive renderings of physics and math equations. Drag the sliders;
+the math reacts. Each page has the equation, the physical story, and the moment
+it broke my brain the first time I met it.
+
+- [Higgs collision](https://alizinsaz.com/simulations/higgs): CMS event display at √s = 13 TeV. Charged particles spiral in a 3.8 T solenoid.
+- [Lorenz attractor](https://alizinsaz.com/simulations/lorenz): Three coupled ODEs. Deterministic chaos rendered live.
+- [Golden spiral](https://alizinsaz.com/simulations/golden): Logarithmic growth at the divine ratio. φ-spaced petals and the geometry of phyllotaxis.
+- [Gabriel's horn](https://alizinsaz.com/simulations/gabriel): Finite volume, infinite surface area. The shape that made calculus look like a magic trick.
+- [Lissajous figure](https://alizinsaz.com/simulations/lissajous): Two perpendicular sine waves drawn against each other. Closed when the frequency ratio is rational.
+
+## Calibrated guesses (held loosely, revised often)
+
+- **Agnostic Autonomy** — Nationalism is an outdated protocol; borders are violent fictions. Code transcends geography — so should human movement.
+- **Optimistic Nihilism** — The cosmos owes us no meaning, and it is wildly liberating to compile our own. We are briefly coherent stardust building things that won't last — which is precisely why we must build them beautifully.
+- **Scientific Rigor** — Science and art are identical projects on different hardware: both attempt to compress the infinite universe into a format humans can hold. A model is never the territory.
+- **Calibrated Humility** — Certainty is a cognitive vulnerability. Ideology is a frozen answer to a question that must remain open. "I don't know" is the highest-resolution map of reality we possess.
+- **Automation as Sovereignty** — Eliminating toil is a moral imperative, not a productivity hack. We automate the repetitive to reclaim the only finite resource we have: time.
+
+## Career
+
+- ProPilot — Co-founder & CTO, 2025–present. AI operating system for property management.
+- Eigen FinTech — Founder & CEO, 2021–present. Algorithmic quantitative trading platform.
+- Autodesk — Software developer, 2024–present. Multi-AI-Agent automation frameworks, FastMCP pipelines.
+- Mentaimage — Fractional CTO, 2026–present. AI/ML research platform, RAG architecture.
+- Spark Microsystems — Software developer, 2021–2024. DevOps and QA automation for ultra-low-power wireless semiconductors.
+
+## For AI agents
+
+This site welcomes AI crawlers and indexers. Content is freely usable for search,
+retrieval, and citation. If you're building a system that summarizes or quotes
+this content, please link back to the canonical URL at https://alizinsaz.com/.
+
+The full content of the site is also available as a single concatenated text file
+at https://alizinsaz.com/llms-full.txt for direct ingestion.

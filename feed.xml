@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ali Zinsaz — Field Notes</title>
+    <link>https://alizinsaz.com/field-notes/</link>
+    <atom:link href="https://alizinsaz.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Essays on philosophy, AI, physics, and cosmology. Working drafts of ideas I'm still figuring out.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Apr 2026 01:23:02 +0000</lastBuildDate>
+    <managingEditor>azinsaz@gmail.com (Ali Zinsaz)</managingEditor>
+    <webMaster>azinsaz@gmail.com (Ali Zinsaz)</webMaster>
+    <generator>handwritten static site</generator>
+    <image>
+      <url>https://alizinsaz.com/og-default.png</url>
+      <title>Ali Zinsaz — Field Notes</title>
+      <link>https://alizinsaz.com/field-notes/</link>
+      <width>1200</width>
+      <height>630</height>
+    </image>
+    <item>
+      <title>We taught rocks to think</title>
+      <link>https://alizinsaz.com/field-notes/rocks-that-think</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/rocks-that-think</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <category>physics</category>
+      <description>Quantum mechanics, doped silicon, and the strange chain from Schrödinger's equation to language models. We didn't invent intelligence — we discovered it.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>Game theory is my operating system</title>
+      <link>https://alizinsaz.com/field-notes/game-theory-os</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/game-theory-os</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <category>philosophy</category>
+      <description>A framework for decisions, lived from the inside. Iterated games, minimax regret, and why defection is almost always a mistake when reputation is on the line.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>Stardust and State Machines</title>
+      <link>https://alizinsaz.com/field-notes/stardust-state-machines</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/stardust-state-machines</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <category>philosophy</category>
+      <description>A pacifist's argument for borderless computing. Rumi's reed flute, Linus Torvalds, and the long shift from administrative borders to genuinely irrelevant ones.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>God is Dead, but the Weights are Converging</title>
+      <link>https://alizinsaz.com/field-notes/weights-converging</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/weights-converging</guid>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <category>ai</category>
+      <description>Nietzsche meets gradient descent. Divine commandments and ML loss functions are structurally identical — so who designs the loss function?</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>The Joy of Finding Things Out</title>
+      <link>https://alizinsaz.com/field-notes/joy-of-finding-out</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/joy-of-finding-out</guid>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+      <category>ai</category>
+      <description>Feynman, automation, and what I learned from building a cosmology RAG that I barely use. Automate the logistics — not the engagement.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>Algorithmic Anxiety: Kierkegaard in the latent space</title>
+      <link>https://alizinsaz.com/field-notes/algorithmic-anxiety</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/algorithmic-anxiety</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <category>philosophy</category>
+      <description>On embeddings, sampling thresholds, and the leap of faith required to commit to any output. Kierkegaard's anxiety of freedom, expressed in high-dimensional space.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+    <item>
+      <title>A drop of water in the cosmic ocean</title>
+      <link>https://alizinsaz.com/field-notes/cosmic-ocean</link>
+      <guid isPermaLink="true">https://alizinsaz.com/field-notes/cosmic-ocean</guid>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <category>cosmology</category>
+      <description>Khayyam, Russell, and the cosmological constant. The universe will be the same value with or without us. This is not depressing — it's clarifying.</description>
+      <author>azinsaz@gmail.com (Ali Zinsaz)</author>
+    </item>
+  </channel>
+</rss>

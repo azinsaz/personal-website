@@ -307,7 +307,7 @@
 }
 .pg-article-meta {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   color: var(--fg-4);
   display: flex;
   gap: var(--gap-m);
@@ -408,7 +408,7 @@
 
 .pg-postcard-meta {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--fg-4);
   margin-bottom: var(--gap-xs);
   display: flex;
@@ -519,10 +519,89 @@
 .pg-footer a:hover { color: var(--fg); }
 .pg-footer-links { display: flex; gap: var(--gap-m); }
 
+/* Contact link in worlds nav — subtle accent variant */
+.pg-worlds-contact {
+  border-color: var(--rule-2) !important;
+  color: var(--fg-3);
+}
+.pg-worlds-contact:hover { color: var(--accent-text); border-color: var(--accent-d) !important; }
+
+/* ══ Tag filter (field-notes index) ═════════════════════ */
+.fn-tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+  margin: var(--gap-l) 0 var(--gap-xl);
+}
+.fn-tag-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-3);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 5px 12px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+.fn-tag-btn:hover { color: var(--fg); border-color: var(--rule-2); }
+.fn-tag-btn.is-active {
+  color: var(--accent-text);
+  border-color: var(--accent);
+  background: var(--accent-g);
+}
+
 /* ══ Responsive ══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  /* Breadcrumb: keep on one line, scroll horizontally if too long.
+     This prevents path slugs like "rocks-that-think" from breaking
+     across multiple lines awkwardly. */
+  .pg-breadcrumb {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+  .pg-breadcrumb::-webkit-scrollbar { display: none; }
+
+  /* On the field-notes / simulations index pages the nav is breadcrumb +
+     pg-nav-right (worlds + search). At <900px stack vertically and let
+     pg-worlds wrap, so nothing gets cropped. */
+  .pg-nav { flex-direction: column; align-items: stretch; gap: var(--gap-s); }
+  .pg-nav-right { flex-wrap: wrap; gap: var(--gap-s); }
+  .pg-nav-right .pg-worlds { flex-wrap: wrap; }
+  /* Icon-only search on subpages too. */
+  .pg-nav-right .topbar-search { padding: 5px 8px; }
+  .pg-nav-right .ts-label { display: none; }
+}
+
 @media (max-width: 600px) {
   .pg-page { padding: 0 var(--gap-l) var(--gap-xxl); }
-  .pg-nav { flex-direction: column; align-items: flex-start; gap: var(--gap-s); }
   .pg-worlds { gap: var(--gap-xs); }
   .pg-footer { flex-direction: column; align-items: flex-start; }
+  /* Hide the contact link on small screens to preserve nav real estate.
+     Specificity must beat `.pg-worlds a` from the touch-target block. */
+  .pg-worlds a.pg-worlds-contact { display: none; }
+}
+
+/* Touch-target sizing — every interactive element should be at least 44px tall
+   on touch viewports. Apply at <900px which covers tablets + phones. */
+@media (max-width: 900px) {
+  .pg-worlds a {
+    padding: 10px 12px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .fn-tag-btn {
+    padding: 11px 14px;
+    min-height: 44px;
+  }
+  .pg-postcard-arrow,
+  .pg-article-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }

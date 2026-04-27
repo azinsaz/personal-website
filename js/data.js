@@ -101,7 +101,7 @@ const DATA = {
       title: "We taught rocks to think",
       tag: "physics",
       slug: "rocks-that-think",
-      href: "field-notes/rocks-that-think.html",
+      href: "field-notes/rocks-that-think",
       excerpt:
         "Quantum mechanics, doped silicon, and the strange chain from Schrödinger's equation to LLMs writing poetry. We didn't invent intelligence — we discovered the universe was always going to do this.",
     },
@@ -110,7 +110,7 @@ const DATA = {
       title: "Game theory is my operating system",
       tag: "philosophy",
       slug: "game-theory-os",
-      href: "field-notes/game-theory-os.html",
+      href: "field-notes/game-theory-os",
       excerpt:
         "A framework for decisions, lived from the inside. Iterated games, minimax regret, and why defection is almost always a mistake when reputation is on the line.",
     },
@@ -119,7 +119,7 @@ const DATA = {
       title: "Stardust and State Machines",
       tag: "philosophy",
       slug: "stardust-state-machines",
-      href: "field-notes/stardust-state-machines.html",
+      href: "field-notes/stardust-state-machines",
       excerpt:
         "A pacifist's argument for borderless computing. Rumi's reed flute, Linus Torvalds, and the long shift from administrative borders to genuinely irrelevant ones.",
     },
@@ -128,7 +128,7 @@ const DATA = {
       title: "God is Dead, but the Weights are Converging",
       tag: "ai",
       slug: "weights-converging",
-      href: "field-notes/weights-converging.html",
+      href: "field-notes/weights-converging",
       excerpt:
         "Nietzsche, gradient descent, and the structural similarity between divine commandments and ML loss functions. The hard part was never atheism — it was figuring out who designs the loss function.",
     },
@@ -138,7 +138,7 @@ const DATA = {
         "The Joy of Finding Things Out (and the burden of automating them)",
       tag: "ai",
       slug: "joy-of-finding-out",
-      href: "field-notes/joy-of-finding-out.html",
+      href: "field-notes/joy-of-finding-out",
       excerpt:
         "Feynman, automation, and what I learned from building a cosmology RAG that I barely use. Automate the logistics — not the engagement. Sometimes the friction is the point.",
     },
@@ -147,7 +147,7 @@ const DATA = {
       title: "Algorithmic Anxiety: Kierkegaard in the latent space",
       tag: "philosophy",
       slug: "algorithmic-anxiety",
-      href: "field-notes/algorithmic-anxiety.html",
+      href: "field-notes/algorithmic-anxiety",
       excerpt:
         "On embeddings, sampling thresholds, and the leap of faith required to commit to any output. Kierkegaard's anxiety of freedom, expressed in high-dimensional space.",
     },
@@ -156,7 +156,7 @@ const DATA = {
       title: "A drop of water in the cosmic ocean",
       tag: "cosmology",
       slug: "cosmic-ocean",
-      href: "field-notes/cosmic-ocean.html",
+      href: "field-notes/cosmic-ocean",
       excerpt:
         "Khayyam, Russell, and the cosmological constant. The universe will be the same value with or without us. This is not depressing — it's clarifying.",
     },
@@ -302,14 +302,14 @@ DATA.paletteItems = [
     icon: "/",
     label: "Simulations — physics & math",
     meta: "/simulations",
-    href: "simulations/index.html",
+    href: "/simulations/",
   },
   {
     group: "pages",
     icon: "/",
     label: "Field Notes — philosophy & essays",
     meta: "/field-notes",
-    href: "field-notes/index.html",
+    href: "/field-notes/",
   },
   {
     group: "actions",

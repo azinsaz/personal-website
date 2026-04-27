@@ -361,7 +361,7 @@
 .hero-id {
   margin: 0 0 18px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-3);
@@ -517,7 +517,7 @@
   align-items: baseline;
 }
 .t-list .row .slug { color: var(--fg); }
-.t-list .row .yr { color: var(--fg-3); font-size: 11px; }
+.t-list .row .yr { color: var(--fg-3); font-size: var(--fs-xs); }
 
 .t-essays .er {
   display: grid;
@@ -527,10 +527,10 @@
   font-size: 12.5px;
   align-items: baseline;
 }
-.t-essays .er .d { color: var(--fg-3); font-size: 11px; }
+.t-essays .er .d { color: var(--fg-3); font-size: var(--fs-xs); }
 .t-essays .er .t { color: var(--fg); cursor: pointer; }
 .t-essays .er .t:hover { color: var(--accent); }
-.t-essays .er .tg { color: var(--fg-3); font-size: 10.5px; text-align: right; }
+.t-essays .er .tg { color: var(--fg-3); font-size: var(--fs-xs); text-align: right; }
 
 .t-bel {
   padding: 4px 0 0;
@@ -766,7 +766,7 @@
 .work-slug { color: var(--fg); letter-spacing: -0.003em; }
 .work:hover .work-slug { color: var(--accent); }
 .work-role { color: var(--fg-2); font-family: var(--font-ui); font-size: 14px; }
-.work-year { color: var(--fg-3); font-size: 11px; letter-spacing: 0.03em; }
+.work-year { color: var(--fg-3); font-size: var(--fs-xs); letter-spacing: 0.03em; }
 
 /* ══ Experiments section ═══════════════════════════════ */
 .sec-exp .exp {
@@ -939,7 +939,7 @@
 }
 .exp-more {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--fs-sm);
   letter-spacing: 0.04em;
   color: var(--fg-3);
   border-bottom: 1px dashed var(--rule-2);
@@ -1181,18 +1181,58 @@
 
 /* ══ Responsive ══════════════════════════════════════ */
 @media (max-width: 900px) {
-  .hero { padding: 56px 22px 28px; }
-  .below { padding: 40px 22px 52px; }
+  .hero {
+    padding: 56px 22px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* On mobile the bright terminal dominates the hero; push it below
+     the headline + chips so the H1 lands first. */
+  .hero > .hero-id   { order: 0; }
+  .hero > .hero-h    { order: 1; }
+  .hero > .chips     { order: 2; margin-top: 8px; }
+  .hero > .hero-hint { order: 3; display: none; } /* keyboard hint isn't useful on touch */
+  .hero > .terminal  { order: 4; margin-top: 18px; }
+
+  /* Home topbar: collapse search to icon, allow nav wrap. */
+  .topbar { padding: 10px 16px; gap: 10px; flex-wrap: wrap; min-height: 0; }
+  .topbar .topbar-spacer { display: none; }
+  .topbar-search {
+    min-width: 0;
+    flex: 0 0 auto;
+    width: auto;
+    padding: 5px 8px;
+  }
+  .topbar .ts-label { display: none; }
+
   .foot { padding: 22px 22px 48px; }
-  .topbar { padding: 11px 16px; gap: 8px; flex-wrap: wrap; }
-  .topbar-search { min-width: 0; flex: 1; }
-  .terminal-body { height: 300px; }
+  .terminal-body { height: 240px; }
   .chips { gap: 8px; }
-  .chip { padding: 5px 11px; font-size: 11.5px; }
-  .essay { grid-template-columns: 72px 1fr; }
+  /* Chips and tabs hit the WCAG 2.1 AAA 44px touch-target minimum on touch viewports.
+     The visual look (compact 11.5px label) is preserved via font-size + padding tuning. */
+  .chip {
+    padding: 11px 14px;
+    font-size: 11.5px;
+    min-height: 44px;
+  }
+  .exp-tab { min-height: 44px; padding: 12px 14px; }
+  .essay { grid-template-columns: 72px 1fr; min-height: 44px; }
   .essay-tag { display: none; }
-  .work { grid-template-columns: 130px 1fr; }
+  .work { grid-template-columns: 130px 1fr; min-height: 44px; }
   .work-year { display: none; }
+  /* Topbar + kernel reopener + footer social icons: bump padding so each tap target
+     reaches the 44px minimum without changing visual density. */
+  .topbar-search { min-height: 44px; padding: 10px 12px; }
+  .kwin-reopen { min-height: 44px; padding: 10px 14px; }
+  .foot-icons a {
+    padding: 15px 14px;
+    margin-left: 0;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .exp-more { display: inline-flex; align-items: center; min-height: 44px; }
+  .sec-meta a { display: inline-flex; align-items: center; min-height: 44px; }
 
   .kwin {
     bottom: 12px;

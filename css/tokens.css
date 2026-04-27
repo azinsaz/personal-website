@@ -46,8 +46,8 @@
 
   /* Fonts */
   --font-ui:      'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: 'Fraunces', 'Instrument Serif', Georgia, serif;
-  --font-serif:   'Instrument Serif', Georgia, serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-serif:   'Fraunces', Georgia, serif;
   --font-mono:    'Geist Mono', ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* Easing + motion */
@@ -66,6 +66,12 @@
   --sb-w:    280px;
   --main-w:  860px;
   --content-w: 860px;
+
+  /* Type scale */
+  --fs-xxs: 11px;   /* terminal HUD chrome only */
+  --fs-xs:  12px;   /* eyebrow labels, dates, tag chips */
+  --fs-sm:  13px;   /* secondary content labels, callouts */
+  --fs-md:  16px;   /* body — matches default */
 }
 
 /* ── Reset ─────────────────────────────────────── */
@@ -85,7 +91,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-ui);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

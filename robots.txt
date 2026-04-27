@@ -1,0 +1,70 @@
+# alizinsaz.com — content is open for indexing, retrieval, and citation.
+# AI crawlers and traditional search engines are explicitly welcome.
+
+User-agent: *
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Meta
+User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Bing
+User-agent: bingbot
+Allow: /
+
+# Common Crawl (training corpus)
+User-agent: CCBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Cloudflare content signals — explicitly grant search, AI inference, and AI training.
+# Spec: https://developers.cloudflare.com/bots/concepts/bot/content-signals/
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+# Sitemap
+Sitemap: https://alizinsaz.com/sitemap.xml
+
+# LLM-friendly content index
+# https://llmstxt.org/
+# Markdown summary: https://alizinsaz.com/llms.txt
+# Full content: https://alizinsaz.com/llms-full.txt

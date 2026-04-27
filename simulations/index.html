@@ -4,22 +4,106 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulations — Ali Zinsaz</title>
-  <meta name="description" content="Interactive physics and math simulations: the Higgs collision, the Lorenz attractor, the golden spiral, Gabriel's horn, the Lissajous figure. Live, interactive, annotated." />
+  <meta name="description" content="Live, interactive simulations of physics and math: Higgs collision, Lorenz attractor, golden spiral, Gabriel's horn, Lissajous figure. Drag the sliders." />
   <meta name="color-scheme" content="dark" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#09090d" />
+
+  <link rel="canonical" href="https://alizinsaz.com/simulations/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Simulations — Ali Zinsaz" />
   <meta property="og:description" content="Five small worlds. Five animated equations. Drag the sliders." />
+  <meta property="og:url" content="https://alizinsaz.com/simulations/" />
+  <meta property="og:image" content="https://alizinsaz.com/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Ali Zinsaz" />
+  <meta property="og:locale" content="en_US" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Fraunces:400,500,600,400italic|Instrument+Serif:400,400italic|Geist:400,500,600,700|Geist+Mono:400,500,600&display=swap" rel="stylesheet">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Simulations — Ali Zinsaz" />
+  <meta name="twitter:description" content="Five small worlds. Five animated equations. Drag the sliders." />
+  <meta name="twitter:image" content="https://alizinsaz.com/og-default.png" />
+  <link rel="stylesheet" href="../css/fonts.css">
 
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/effects.css" />
   <link rel="stylesheet" href="../css/pages.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Simulations — Ali Zinsaz",
+    "description": "Live, interactive simulations of physics and math.",
+    "url": "https://alizinsaz.com/simulations/",
+    "author": {
+      "@type": "Person",
+      "name": "Ali Zinsaz",
+      "url": "https://alizinsaz.com/"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://alizinsaz.com/simulations/higgs",
+          "name": "Higgs collision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://alizinsaz.com/simulations/lorenz",
+          "name": "Lorenz attractor"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://alizinsaz.com/simulations/golden",
+          "name": "Golden spiral"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://alizinsaz.com/simulations/gabriel",
+          "name": "Gabriel's horn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://alizinsaz.com/simulations/lissajous",
+          "name": "Lissajous figure"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://alizinsaz.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Simulations",
+        "item": "https://alizinsaz.com/simulations/"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -29,15 +113,16 @@
 
     <nav class="pg-nav" aria-label="site navigation">
       <div class="pg-breadcrumb">
-        <a href="../index.html" class="pg-back" aria-label="home">←</a>
+        <a href="/" class="pg-back" aria-label="home">←</a>
         <span class="pb-host">ali</span><span class="pb-sep">@localhost</span>
         <span class="pb-sep">~</span><span class="pb-sep">/</span><span class="pb-path">simulations</span>
       </div>
       <div class="pg-nav-right">
         <div class="pg-worlds" role="list">
-          <a href="../index.html" role="listitem">~/home</a>
-          <a href="../field-notes/index.html" role="listitem">~/field-notes</a>
-          <a href="index.html" class="active" role="listitem">~/simulations</a>
+          <a href="/" role="listitem">~/home</a>
+          <a href="/field-notes/" role="listitem">~/field-notes</a>
+          <a href="/simulations/" class="active" role="listitem">~/simulations</a>
+          <a href="mailto:azinsaz@gmail.com" role="listitem" class="pg-worlds-contact">~/contact</a>
         </div>
         <button class="topbar-search" id="top-search" aria-label="open search (⌘K)">
           <span class="ts-glyph" aria-hidden="true">⌕</span>
@@ -58,35 +143,35 @@
     </header>
 
     <section class="pg-simgrid" aria-label="simulations">
-      <a class="pg-simcard" href="higgs.html" data-demo="higgs">
+      <a class="pg-simcard" href="higgs" data-demo="higgs">
         <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">pp → H → γγ</span>
         <h2 class="pg-simcard-h">Higgs collision</h2>
         <p class="pg-simcard-blurb">CMS event display at √s = 13 TeV. Charged particles spiraling in a 3.8 T solenoid. The 125 GeV excess that took 50 years and 10,000 people to find.</p>
       </a>
 
-      <a class="pg-simcard" href="lorenz.html" data-demo="lorenz">
+      <a class="pg-simcard" href="lorenz" data-demo="lorenz">
         <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">dx/dt = σ(y−x)</span>
         <h2 class="pg-simcard-h">Lorenz attractor</h2>
         <p class="pg-simcard-blurb">Three ordinary differential equations. Nothing hidden, nothing random, nothing quantum. And, in practice, completely unforecastable. The first chaos.</p>
       </a>
 
-      <a class="pg-simcard" href="golden.html" data-demo="golden">
+      <a class="pg-simcard" href="golden" data-demo="golden">
         <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">φ = (1+√5)/2</span>
         <h2 class="pg-simcard-h">Golden spiral</h2>
         <p class="pg-simcard-blurb">A logarithmic spiral with a famous growth factor. The math is real; the "nature loves φ" claim is mostly post-hoc pattern matching. But plants and shadows, yes.</p>
       </a>
 
-      <a class="pg-simcard" href="gabriel.html" data-demo="gabriel">
+      <a class="pg-simcard" href="gabriel" data-demo="gabriel">
         <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">V = π · A → ∞</span>
         <h2 class="pg-simcard-h">Gabriel's horn</h2>
         <p class="pg-simcard-blurb">Finite volume. Infinite surface area. You can fill it with paint but you cannot paint the inside of it. The first time most students realize "infinite" comes in different sizes.</p>
       </a>
 
-      <a class="pg-simcard" href="lissajous.html" data-demo="lissajous">
+      <a class="pg-simcard" href="lissajous" data-demo="lissajous">
         <canvas class="pg-simcard-canvas"></canvas>
         <span class="pg-simcard-eq">x = sin(at+δ), y = sin(bt)</span>
         <h2 class="pg-simcard-h">Lissajous figure</h2>
