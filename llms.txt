@@ -55,7 +55,6 @@ it broke my brain the first time I met it.
 - ProPilot — Co-founder & CTO, 2025–present. AI operating system for property management.
 - Eigen FinTech — Founder & CEO, 2021–present. Algorithmic quantitative trading platform.
 - Autodesk — Software developer, 2024–present. Multi-AI-Agent automation frameworks, FastMCP pipelines.
-- Mentaimage — Fractional CTO, 2026–present. AI/ML research platform, RAG architecture.
 - Spark Microsystems — Software developer, 2021–2024. DevOps and QA automation for ultra-low-power wireless semiconductors.
 
 ## For AI agents

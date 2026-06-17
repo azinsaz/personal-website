@@ -13,7 +13,7 @@
 Ali Zinsaz is a physics-and-engineering builder based in Montreal, Canada.
 Co-founder & CTO of ProPilot (AI operating system for property management).
 Founder of Eigen FinTech (algorithmic quantitative trading platform).
-Software developer at Autodesk. Fractional CTO at Mentaimage.
+Software developer at Autodesk.
 
 Trained in physics and engineering, working at the intersection of AI systems,
 quantitative modelling, and the philosophical questions that come with both.
@@ -80,8 +80,6 @@ The question I'm always asking, implicitly, is: what kind of game am I in? This 
 Working at Autodesk while building ProPilot is a game I think about carefully. The naive framing is: I'm trading time I could be spending on my startup for a salary that funds my life while the startup grows. That's accurate but incomplete. The full framing is: I'm playing a coordination game with my future self. The constraint is financial runway, not ambition. Defecting early — leaving before I have enough funding — doesn't maximize my expected outcome, it just compresses the timeline in a way that makes failure more likely. The September 2026 target for ProPilot's seed round exists for this reason: it's the point at which the expected value of leaving exceeds the expected value of staying, given everything I know about the probabilities.
 
 The Eigen origin story is also a game theory story. My father has been trading for 30 years. The decision to build a system on his intuition rather than starting from scratch was a minimax regret decision: the worst outcome of building on a flawed foundation is a system that loses money predictably, which is recoverable. The worst outcome of ignoring 30 years of pattern recognition is building something technically correct that misses market structure entirely, which is not recoverable in the same way. The regret-minimizing choice was to start from his intuition and let the data tell me what to keep.
-
-The mentAimage equity negotiation is the clearest example of iterated game reasoning. 5% at 4-year vest, 1-year cliff is a standard fractional CTO structure. I could have negotiated harder for more equity upfront. But this is an iterated game: the value I deliver in year one determines what year two looks like, and a negotiation that starts from trust is more likely to compound well than one that starts from extraction. I've defected in one-shot situations exactly once in my professional life and I still think about it.
 
 
 ## Reputation is a repeated game

@@ -75,15 +75,6 @@ const DATA = {
       external: true,
     },
     {
-      slug: "mentaimage",
-      year: "2026—",
-      role: "fractional CTO",
-      blurb:
-        "AI/ML research platform. RAG architecture, LLM evals, automated quality guardrails.",
-      href: "https://mentaimage.com",
-      external: true,
-    },
-    {
       slug: "spark microsystems",
       year: "2021–2024",
       role: "software developer",
@@ -269,7 +260,7 @@ const DATA = {
 
   /* ── Scroll-tied kernel messages ── */
   sectionMessages: {
-    projects: { t: "scandir ~/career — 6 entries", c: "fg" },
+    projects: { t: "scandir ~/career — 4 entries", c: "fg" },
     writing: { t: "tail ~/field-notes — 7 recent", c: "fg" },
     experiments: { t: "loaded physics.ko — 5 equations live", c: "ok" },
     beliefs: { t: "cat ~/.priors · calibrated, revisable", c: "fg" },
